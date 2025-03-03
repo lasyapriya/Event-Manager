@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Chair Reservation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap');
+
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240620/pngtree-traditions-wedding-hall-with-sofa-decorated-flowers-image_15905212.jpg');
+            background-size: 50%;
+            background-position: center;
+        }
+
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            width: 350px;
+            margin: 80px auto;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        /* Gold Gradient Border */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #d4af37, #f8e48e);
+            z-index: -1;
+            border-radius: 18px;
+        }
+
+        /* Decorative Elements */
+        .container::after {
+            content: "❃";
+            font-size: 28px;
+            color: #d4af37;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 10px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #8B6914; /* Rich Gold */
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #d4af37; /* Gold border */
+            border-radius: 6px;
+            font-size: 16px;
+            background: #fff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .container input[type="text"]:focus {
+            outline: none;
+            border-color: #caa32b;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+        }
+
+        .container input[type="submit"] {
+            background: #d4af37;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container input[type="submit"]:hover {
+            background: #b8992a;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Wedding Seating Reservation</h2>
+        <form>
+            <label for="chairs">Enter the number of chairs:</label>
+            <input type="text" id="chairs" name="chairs">
+            
+            <label for="sofaSets">Enter the number of sofa sets:</label>
+            <input type="text" id="sofaSets" name="sofaSets">
+            
+            <label for="coupleSofas">Enter the number of couple sofas:</label>
+            <input type="text" id="coupleSofas" name="coupleSofas">
+            
+            <label for="total">Total:</label>
+            <input type="text" id="total" name="total">
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

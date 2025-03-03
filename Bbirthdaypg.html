@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+<center>
+     
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            
+            color: #333;
+            overflow-x: hidden;
+</center>
+        }
+
+        /* Stylish Curved Banner */
+        .banner {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+            padding: 25px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 85%;
+            margin: 20px auto;
+            border: 5px double #fff;
+        }
+
+        /* Decorative Border for the Slider */
+        .slider-container {
+            position: relative;
+            width: 60%;
+            height: 220px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 8px ridge #ff7eb3;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide a {
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid white;
+        }
+
+        .slide a:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(255, 182, 193, 0.7);
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 182, 193, 0.8);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 50%;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+         .balloon {
+            position: absolute;
+            width: 150px;
+            animation: floatUp 6s infinite ease-in-out;
+        }
+
+        .balloon1 { top: 80%; left: 10%; animation-delay: 0s; }
+        .balloon2 { top: 85%; left: 70%; animation-delay: 1.5s; }
+        .balloon3 { top: 90%; left: 40%; animation-delay: 3s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+<img src=" https://cdn.pixabay.com/photo/2012/04/05/01/40/balloons-25737_1280.png" class="balloon balloon1">
+    <img src="https://cdn.pixabay.com/photo/2012/04/05/01/40/balloons-25737_1280.png" class="balloon balloon2">
+    <img src="https://cdn.pixabay.com/photo/2024/02/05/15/39/ai-generated-8554773_1280.png" style=width:250px;height:250px; class="balloon balloon3">
+    <div class="banner">🎂 Our Services to Make Your Birthday Unforgettable! 🎉</div>
+
+    <div class="slider-container">
+        <div class="slides">
+            <div class="slide"><a href="photographypg.html">📸 Photography</a></div>
+            <div class="slide"><a href="makeuppg.html">💄 Make-Up</a></div>
+            <div class="slide"><a href="seatingarr.html">🪑 Seating Arrangements</a></div>
+            <div class="slide"><a href="soundsystem.html">🎶 DJ & Sound System</a></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        function showSlide() {
+            const slides = document.querySelector('.slides');
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        function nextSlide() {
+            index = (index + 1) % 4;
+            showSlide();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + 4) % 4;
+            showSlide();
+        }
+    </script>
+</body>
+</html>

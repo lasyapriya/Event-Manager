@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sound System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Orbitron:wght@500&display=swap');
+
+        body {
+            font-family: 'Electrolize', sans-serif;
+            font-size: 24px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        /* Outer Box */
+        .outer-box {
+            border: 5px double #ffcc00;
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin: 40px auto;
+            width: 850px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        /* Neon Glow Effect */
+        .outer-box::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #ff0099, #ffcc00, #00ffff);
+            z-index: -1;
+            filter: blur(8px);
+            animation: neonGlow 3s infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            0% { filter: blur(6px); opacity: 1; }
+            100% { filter: blur(12px); opacity: 0.7; }
+        }
+
+        /* Form Box */
+        .form-box {
+            border: 6px outset #ff0099;
+            background-color: #111;
+            padding: 20px;
+            width: 470px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 153, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Form Inputs */
+        .form-box label {
+            color: #ffcc00;
+            font-size: 18px;
+            font-family: 'Orbitron', sans-serif;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-box input {
+            width: 75%;
+            padding: 10px;
+            border: 2px solid #ff0099;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            background: black;
+            color: white;
+            box-shadow: 0 0 10px rgba(255, 0, 153, 0.5);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .form-box input:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: #ff0099;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 12px rgba(255, 0, 153, 0.8);
+        }
+
+        .submit-btn:hover {
+            background: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+        }
+
+        /* Image Positioning */
+        .img-left {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .img-right {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer-box">
+        <div style="border:5px double black; background-color:black; padding: 20px; position: relative;">
+            <img align="left" src="https://i.pinimg.com/originals/d2/3f/dc/d23fdc7c2261ad84ae19a42e6e9ee809.gif" style="width:190px;height:170px;">
+            <img align="right" src="https://img1.picmix.com/output/stamp/normal/4/5/3/4/1754354_21532.gif" style="width:150px;height:150px;">
+            <center><img src="https://media.tenor.com/aVycOMFG8YUAAAAM/shakespaw.gif" style="width:250px;height:250px;"><br></center>
+
+            <!-- Images placed outside the form box -->
+            <img class="img-left" src="notes3.gif" style="width:160px;height:190px;">
+            <img class="img-right" src="sb1.gif" style="width:160px;height:190px;">
+
+            <div class="form-box">
+                <label for="mics">Enter number of mics:</label>
+                <input type="text" id="mics" required><br>
+
+                <label for="soundboxes">Enter number of sound boxes:</label>
+                <input type="text" id="soundboxes" required><br>
+
+                <label for="led">Enter number of LED displays:</label>
+                <input type="text" id="led" required><br>
+
+                <label for="total">Total:</label>
+                <input type="text" id="total" required><br>
+
+                <button class="submit-btn">Submit</button>
+            </div>
+
+            <center><img src="notes2.gif" style="width:350px;height:150px;"><br></center>
+        </div>
+    </div>
+</body>
+</html>

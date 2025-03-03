@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Makeup Page</title>
+  
+<link href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&display=swap' rel='stylesheet'>
+  <style>
+  /* Background Image with Gradient Overlay */
+  body {
+   background:url('https://i.pinimg.com/originals/03/45/17/0345179129fdc6f536f8162cb0a09892.jpg');
+                linear-gradient(to bottom, rgba(255, 182, 193, 0.7), rgba(255, 228, 225, 0.9));
+    background-size: 60%;
+    font-family: 'Great Vibes' ,'poppins','serif';
+    letter-spacing:1px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+header {
+    text-align: center;
+    padding: 90px 20px; /* Good spacing */
+    font-weight: 800;
+    font-size: 50px; /* Emphasized text */
+    letter-spacing: 4px;
+    
+    /* Background Styling */
+    background: rgba(0, 0, 0, 0.7); 
+    border-bottom: 5px solid #8A2BE2; /* Royal purple border */
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5); /* Purple glow */
+
+    /* Text Styling */
+    color: #FF69B4; /* Pink text */
+    text-shadow: 
+        0 0 15px #00FFFF, /* Cyan glow */
+        0 0 30px #8A2BE2, /* Purple glow */
+        0 0 45px #00CED1; /* Deep Cyan */
+
+    /* Wavy Animation */
+    animation: wave 3s infinite linear, glow 1.5s infinite alternate;
+}
+
+/* Wavy effect */
+
+/* Glow effect */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #00FFFF, 0 0 20px #8A2BE2, 0 0 30px #00CED1; }
+    100% { text-shadow: 0 0 20px #00FFFF, 0 0 30px #8A2BE2, 0 0 40px #00CED1; }
+}
+
+@keyframes pinkGlow {
+    0% { text-shadow: 0 0 15px #FF1493, 0 0 30px #FF00FF, 0 0 45px #8A2BE2; }
+    100% { text-shadow: 0 0 20px #FF1493, 0 0 40px #FF00FF, 0 0 50px #8A2BE2; }
+}
+
+
+
+
+    h1 {
+      margin: 1;
+      font-size: 36px;
+      font-weight:700;
+      color: white;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .makeup-description {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Product Grid */
+    .makeup-products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      width: 30%;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h2 {
+      font-size: 30px;
+      margin-top: 10px;
+      color: #d63384;
+    }
+
+    .product-card p {
+      font-size: 25px;
+      font-weight:600;
+      color: #666;
+    }
+
+    /* Table Styling */
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 15px;
+    font-size:25px;
+     font-weight:500;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: #ff99aa;
+      color: white;
+      letter-spacing:2px;
+    }
+
+    tr:nth-child(even) {
+      background: #ffdde1;
+    }
+
+    tr:hover {
+      background: #ffc3cf;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Welcome To Make-up Page
+  </header>
+<center>
+
+
+
+  <div class="container">
+    <div class="makeup-description">
+      <h2>This is a makeup page where you can find various makeup products and accessories.</h2>
+    </div>
+
+    <div class="makeup-products">
+      <div class="product-card">
+        <img src="pr6.gif" alt="Product 1">
+        <h2>Product 1</h2>
+        <p><strong>" Maybelline fitme +matte " foundation</strong> is made to fit the diverse Indian skin tones...</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images.jfif" alt="Product 2">
+        <h2>Product 2</h2>
+        <p><strong>Liquid foundations</strong> are suitable for people with dry, oily, and combination skin types...</p>
+      </div>
+
+      <div class="product-card">
+        <img src="pr4.gif" alt="Product 3">
+        <h2>Product 3</h2>
+        <p><strong>Makeup Artist Kit</strong> is a collection of over 33 pieces very important makeup products...</p>
+      </div>
+
+      <div class="product-card">
+        <img src="pr7.gif" alt="Product 4">
+        <h2>Product 4</h2>
+        <p><strong>Beauty Products</strong> include skincare, fragrance, haircare, and color (cosmetics) products...</p>
+      </div>
+
+      <div class="product-card">
+        <img src="pr5.gif" alt="Product 5">
+        <h2>Product 5</h2>
+        <p><strong>Mascara</strong> enhances the eyelashes, making them appear longer, thicker, and darker...</p>
+      </div>
+
+      <div class="product-card">
+        <img src="a.webp" alt="Product 6">
+        <h2>Product 6</h2>
+        <p><strong>Foundation</strong> creates an even complexion by covering imperfections and providing a base...</p>
+      </div>
+    </div>
+  </div>
+
+  <center>
+    <h2 style="color:white;font-size:40px;">Makeup Artists and Services</h2>
+    <table border="1">
+      <tr>
+        <th>S.NO</th>
+        <th>Name of Artist</th>
+        <th>Services Provided</th>
+        <th>Amount for One Time</th>
+        <th>Contact Number</th>
+      </tr>
+      <tr>
+        <td>1.</td>
+        <td>Sushma Paul</td>
+        <td>
+          <ul style="list-style-type:none; padding:0;">
+            <li>Wedding makeup</li>
+            <li>Special occasion makeup</li>
+            <li>Bridal hairstyles</li>
+            <li>Makeup consultation</li>
+          </ul>
+        </td>
+        <td>₹5000</td>
+        <td>9121837564</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Johny Smith</td>
+        <td>
+          <ul style="list-style-type:none; padding:0;">
+            <li>Theatrical makeup</li>
+            <li>Photo shoot makeup</li>
+            <li>Makeup workshops</li>
+            <li>Mehendi & Hair styles</li>
+          </ul>
+        </td>
+        <td>₹5500</td>
+        <td>6305672415</td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Deepika Shetty</td>
+        <td>
+          <ul style="list-style-type:none; padding:0;">
+            <li>Theatrical makeup</li>
+            <li>Natural & Mineral makeup</li>
+            <li>Mehendi & Hair styles</li>
+          </ul>
+        </td>
+        <td>₹6500</td>
+        <td>9337411210</td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>
