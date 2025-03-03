@@ -57,5 +57,50 @@
     <h1><a href="awardfunction.html">AWARD FUNCTIONS</a></h1>
     <h1><a href="Bbirthdaypg.html">BIRTHDAYS</a></h1>
     <h1><a href="otherpg.html">OTHER</a></h1>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let flowers = [];
+        for (let i = 0; i < 50; i++) {
+            let flower = document.createElement("img");
+            flower.src = "https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png";
+            flower.classList.add("flower");
+
+            let x = Math.random() * (window.innerWidth + 100) - 50;
+            let y = Math.random() * (window.innerHeight + 100) - 50;
+
+            flower.style.left = `${x}px`;
+            flower.style.top = `${y}px`;
+            flower.style.opacity = "1";
+            flower.style.transform = "scale(12)"; // Start fully covering the screen
+
+            document.body.appendChild(flower);
+            flowers.push(flower);
+
+            setTimeout(() => {
+                flower.style.opacity = "0";
+                flower.style.transform = "scale(1)"; // Shrink smoothly
+            }, i * 40);
+        }
+
+        setTimeout(() => {
+            flowers.forEach(f => f.remove()); // Remove flowers after transition
+        }, 2500);
+    });
+
+    // Flower CSS
+    const style = document.createElement("style");
+    style.innerHTML = `
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+
 </body>
 </html>
