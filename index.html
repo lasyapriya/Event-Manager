@@ -89,11 +89,59 @@
         <h1>EVENT MANAGER</h1>
         <div class="content">
             <p>Welcome to Event Manager, your ultimate platform for planning and executing flawless events. Whether it’s a wedding, corporate gathering, or a special celebration, we ensure every detail is crafted to perfection. Our intuitive tools, expert guidance, and seamless experience make event management effortless and enjoyable.</p>
-            <a class="button" href="a1.html">LET'S GO</a>
+            <a class="button" href="e2.html">LET'S GO</a>
         </div>
         <div class="contact">
             <p style="color:brown;">📞 Contact Us: 123-456-7890 | 📧 Email: support@eventmanager.com</p>
         </div>
     </div>
+<script>
+    document.querySelector(".button").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent immediate page load
+
+        let flowers = [];
+        for (let i = 0; i < 50; i++) { 
+            let flower = document.createElement("img");
+            flower.src = "https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png"; // Flower image
+            flower.classList.add("flower");
+
+            let x = Math.random() * (window.innerWidth + 100) - 50;
+            let y = Math.random() * (window.innerHeight + 100) - 50;
+
+            flower.style.left = `${x}px`;
+            flower.style.top = `${y}px`;
+
+            // Add initial style
+            flower.style.transform = `scale(1) rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(flower);
+            flowers.push(flower);
+
+            setTimeout(() => {
+                flower.style.opacity = "1";
+                flower.style.transform = `scale(12)`; // Scale up fully to cover screen
+            }, i * 30);
+        }
+
+        setTimeout(() => {
+            window.location.href = "e2.html"; // Redirect after animation
+        }, 3200); // Delay before switching
+    });
+
+    // Flower CSS
+    const style = document.createElement("style");
+    style.innerHTML = `
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+
 </body>
 </html>
+
