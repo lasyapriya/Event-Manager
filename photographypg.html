@@ -14,7 +14,13 @@ html, body {
     background: linear-gradient(to right, #C33764, #1D2671);
     font-family: 'Trirong', serif;
     color: #333;
+    animation: fadeIn 1.5s ease-in-out;
 }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 body {
     background-image: url('https://ugokawaii.com/wp-content/uploads/2022/11/photographer.gif');
     background-repeat: no-repeat;
@@ -35,22 +41,34 @@ nav a {
     padding: 10px;
     position: relative;
     transition: color 0.3s ease;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
 }
 nav a:hover {
     color: #ffdf00;
     text-decoration: underline;
 }
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 h1 {
     font-size: 40px;
     color:#ffffff ;
     padding: 15px;
     font-weight: 700;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
-h3{
-      font size:20px;
-      color:rgb(255,206,152);
-      }
+h3 {
+    font-size: 20px;
+    color: rgb(255,206,152);
+}
+
 #about p {
     font-size: 22px;
     line-height: 1.6;
@@ -58,45 +76,11 @@ h3{
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards;
+    animation-delay: 1.5s;
 }
 
-</style>
-
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-</nav>
-</center>
-
-<section id="about">
-    <div class="hbg">
-        <center><h1>About Us</h1></center>
-        <p>Welcome to our photography about us session! We are a team of experienced photographers who are passionate about capturing special moments in people's lives. Our mission is to create beautiful, timeless images that our clients will cherish for years to come.</p>
-    </div>
-</section>
-<section id="portfolio">
-    <div class="hbg">
-        <center><h1>Recent Photos</h1></center>
-        <div class="gallery">
-            <img src="image3.avif" class="portfolio-img">
-            <img src="image2.jpg" class="portfolio-img">
-            <img src="image4.jpg" class="portfolio-img">
-            <img src="image8.jpg" class="portfolio-img">
-            <img src="birimage.jpg" class="portfolio-img">
-            <img src="image13.webp" class="portfolio-img">
-        </div>
-    </div>
-</section>
-
-<!-- Lightbox Overlay -->
-<div id="lightbox">
-    <span id="close">&times;</span>
-    <img id="lightbox-img">
-</div>
-
-<style>
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -108,8 +92,11 @@ h3{
     width: 350px;
     height: 300px;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
     cursor: pointer;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards;
+    animation-delay: 2s;
 }
 
 .portfolio-img:hover {
@@ -144,6 +131,35 @@ h3{
 }
 </style>
 
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</nav>
+</center>
+
+<section id="about">
+    <div class="hbg">
+        <center><h1>About Us</h1></center>
+        <p>Welcome to our photography about us session! We are a team of experienced photographers who are passionate about capturing special moments in people's lives. Our mission is to create beautiful, timeless images that our clients will cherish for years to come.</p>
+    </div>
+</section>
+
+<section id="portfolio">
+    <div class="hbg">
+        <center><h1>Recent Photos</h1></center>
+        <div class="gallery">
+            <img src="image3.avif" class="portfolio-img">
+            <img src="image2.jpg" class="portfolio-img">
+            <img src="image4.jpg" class="portfolio-img">
+            <img src="image8.jpg" class="portfolio-img">
+            <img src="birimage.jpg" class="portfolio-img">
+            <img src="image13.webp" class="portfolio-img">
+        </div>
+    </div>
+</section>
+
 <script>
 document.querySelectorAll('.portfolio-img').forEach(image => {
     image.addEventListener('click', function() {
@@ -159,59 +175,11 @@ document.getElementById('close').addEventListener('click', function() {
 
 <section id="contact">
     <center><h1>Contact Us</h1>
-    <div class="contact-form">
-        <h3>Instagram: @abcd_photos</h3>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK5zQ42vVBoRGGYD7A6pKnIIRAT_G-cFVZbA&s" style="width:50px;height:50px;"><br>
-        <h3>Facebook: abcd_photos</h3>
-        <img src="https://starfinderfoundation.org/wp-content/uploads/2015/07/Facebook-logo-blue-circle-large-transparent-png.png" style="width:50px;height:50px;"><br>
-        <h3>Gmail: abcd_photos@gmail.com</h3>
-        <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" style="width:50px;height:50px;"><br>
-      </center>
-        <style>
-            .form-container {
-                border: 3px dotted yellow;
-                padding: 20px;
-                width: 300px;
-                margin: auto;
-                font-size: 16px;
-                color:coral;
-                background-color: linear-gradient(to right, #C33764, #1D2671) ;
-            }
-            .form-container label {
-                font-weight: bold;
-                display: block;
-                margin-bottom: 5px;
-            }
-            .form-container input[type="text"],
-            .form-container input[type="email"],
-            .form-container textarea {
-                width: calc(100% - 12px);
-                padding: 6px;
-                margin-bottom: 10px;
-            }
-            .form-container button {
-                padding: 10px 20px;
-                background-color: #0000ff;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-            }
-            .form-container button:hover {
-                background-color: #909fd5;
-            }
-        </style>
-        <div class="form-container">
-            <form id="contact-form" method="post" action="submit.php">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required><br>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea><br>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div><br>
+    <h3>Instagram: @abcd_photos</h3>
+    <h3>Facebook: abcd_photos</h3>
+    <h3>Gmail: abcd_photos@gmail.com</h3>
+<br>
+    </center>
 </section>
 </body>
 </html>
