@@ -40,30 +40,101 @@ img {
    mix-blend-mode: multiply;
    opacity: 0.9;
 }
+
+/* Drum Animation Styles */
+.drum-animation {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+/* Remove mix-blend-mode only for drum animation */
+.drum-animation img {
+    mix-blend-mode: normal;
+    width: 15vw;
+    height: auto;
+}
+
+/* Drum Shrinking Animation */
+.shrink-drum {
+    animation: drum-shrink 1.8s ease-in-out forwards;
+}
+
+@keyframes drum-shrink {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; } /* Fully disappears */
+}
 </style>
 </head>
 <body>
-<div>
-<img align="left" src="bride.gif" alt="left" style="width:290px;height:250px;">
-<img align="right" src="bridegroom.gif" alt="left" style="width:290px;height:250px;">
-<div style="text-align: center;">
-    <img src=" https://i.pinimg.com/originals/ba/76/b2/ba76b27387b2a4411961044b668ec927.gif" alt="center" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;">
-</div>
 
 <div>
-<h1 style="color:#8b4513; font-family: 'Dancing Script', cursive;"> THESE ARE OUR SERVICES PROVIDED FOR YOU</h1>
-<h1><a href="photographypg.html">PHOTOGRAPHY</a></h1>
-<h1><a href="makeuppg.html">MAKE-UP</a></h1>
-<h1><a href="seatingarr.html">SEATING ARRANGEMENTS</a></h1>
-<h1><a href="soundsystem.html">DJ</a></h1>
-</div> 
-<img align="left" src="abc.gif" alt="left" style="width:250px;height:250px;">
-<img align="right" src="shehnai.gif" alt="left" style="width:250px;height:250px;">
-<img align="center" src="vivah.gif" alt="left" style="width:300px;height:300px;"><br> 
-<img align="bottom" src="mrgwishes.png" alt="left" style="width:450px;height:300px;">       
+    <img align="left" src="bride.gif" alt="left" style="width:290px;height:250px;">
+    <img align="right" src="bridegroom.gif" alt="left" style="width:290px;height:250px;">
+    <center>
+        <img src="C:\Users\admin\OneDrive\Documents\lasyapriya\mrg5.gif" alt="center" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;">
+    </center>
+    <div>
+        <h1 style="color:#8b4513; font-family: 'Dancing Script', cursive;"> THESE ARE OUR SERVICES PROVIDED FOR YOU</h1>
+        <h1><a href="photographypg.html">PHOTOGRAPHY</a></h1>
+        <h1><a href="makeuppg.html">MAKE-UP</a></h1>
+        <h1><a href="seatingarr.html">SEATING ARRANGEMENTS</a></h1>
+        <h1><a href="soundsystem.html">DJ</a></h1>
+    </div> 
+    <img align="left" src="abc.gif" alt="left" style="width:250px;height:250px;">
+    <img align="right" src="shehnai.gif" alt="left" style="width:250px;height:250px;">
+    <img align="center" src="vivah.gif" alt="left" style="width:300px;height:300px;"><br> 
+    <img align="bottom" src="mrgwishes.png" alt="left" style="width:450px;height:300px;">       
 </div>
+
+<!-- Drum Animation Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("animation") === "true") {
+            let drumContainer = document.createElement("div");
+            drumContainer.classList.add("drum-animation");
+
+            let drum = document.createElement("img");
+            drum.src = "https://png.pngtree.com/png-vector/20230301/ourmid/pngtree-shubh-vivah-hindi-calligraphy-with-indian-wedding-musical-instrument-vector-png-image_6623701.png";
+            drum.classList.add("drum-image");
+
+            drumContainer.appendChild(drum);
+            document.body.appendChild(drumContainer);
+
+            // Retrieve final scale from Page 1
+            let finalScale = localStorage.getItem("drumFinalScale") || "3"; // Default to 3 if missing
+
+            // Set drum to the same scale as it was at the end of Page 1
+            drum.style.transform = `scale(${finalScale})`;
+            drum.style.transition = "transform 1.8s ease-in-out, opacity 1.8s ease-in-out";
+
+            // Ensure smooth shrinking animation
+            setTimeout(() => {
+                drum.style.transform = "scale(0)"; // Shrinks down smoothly
+                drum.style.opacity = "0";
+            }, 100);
+
+            // Remove drum after animation completes
+            setTimeout(() => {
+                drumContainer.remove();
+            }, 2000);
+        }
+    });
+</script>
+
+
 </body>
 </html>
+
+
 
 
 
