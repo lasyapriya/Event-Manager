@@ -48,48 +48,33 @@
             bottom: 10%;
             right: 5%;
         }
-    </style>
-</head>
-<body>
-    <img src="https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png" class="decorative-flower-left">
-    <img src="https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png" class="decorative-flower-right" >
-    <h1><a href="marriagepg.html">MARRIAGE</a></h1>
-    <h1><a href="awardfunction.html">AWARD FUNCTIONS</a></h1>
-    <h1><a href="Bbirthdaypg.html">BIRTHDAYS</a></h1>
-    <h1><a href="otherpg.html">OTHER</a></h1>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let flowers = [];
-        for (let i = 0; i < 50; i++) {
-            let flower = document.createElement("img");
-            flower.src = "https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png";
-            flower.classList.add("flower");
 
-            let x = Math.random() * (window.innerWidth + 100) - 50;
-            let y = Math.random() * (window.innerHeight + 100) - 50;
-
-            flower.style.left = `${x}px`;
-            flower.style.top = `${y}px`;
-            flower.style.opacity = "1";
-            flower.style.transform = "scale(12)"; // Start fully covering the screen
-
-            document.body.appendChild(flower);
-            flowers.push(flower);
-
-            setTimeout(() => {
-                flower.style.opacity = "0";
-                flower.style.transform = "scale(1)"; // Shrink smoothly
-            }, i * 40);
+        /* Drum Animation */
+        .drum-animation {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+        .drum-animation img {
+            width: 10vw; /* Start small */
+            height: auto;
+            animation: drum-zoom 2s ease-in-out forwards;
         }
 
-        setTimeout(() => {
-            flowers.forEach(f => f.remove()); // Remove flowers after transition
-        }, 2500);
-    });
+        /* Zoom In Effect */
+        @keyframes drum-zoom {
+            0% { transform: scale(0.1); opacity: 0; }
+            100% { transform: scale(5); opacity: 1; }  
+        }
 
-    // Flower CSS
-    const style = document.createElement("style");
-    style.innerHTML = `
+        /* Flower Animation */
         .flower {
             position: absolute;
             width: 50px;
@@ -97,10 +82,74 @@
             opacity: 0;
             transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
         }
-    `;
-    document.head.appendChild(style);
-</script>
+    </style>
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png" class="decorative-flower-left">
+    <img src="https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png" class="decorative-flower-right">
 
+    <h1><a href="#" id="marriage-link">MARRIAGE</a></h1>
+    <h1><a href="awardfunction.html">AWARD FUNCTIONS</a></h1>
+    <h1><a href="Bbirthdaypg.html">BIRTHDAYS</a></h1>
+    <h1><a href="otherpg.html">OTHER</a></h1>
 
+    <script>
+        // Flower Animation
+        document.addEventListener("DOMContentLoaded", function () {
+            let flowers = [];
+            for (let i = 0; i < 50; i++) {
+                let flower = document.createElement("img");
+                flower.src = "https://cdn.pixabay.com/photo/2024/05/17/14/50/ai-generated-8768467_640.png";
+                flower.classList.add("flower");
+
+                let x = Math.random() * (window.innerWidth + 100) - 50;
+                let y = Math.random() * (window.innerHeight + 100) - 50;
+
+                flower.style.left = `${x}px`;
+                flower.style.top = `${y}px`;
+                flower.style.opacity = "1";
+                flower.style.transform = "scale(12)"; // Start fully covering the screen
+
+                document.body.appendChild(flower);
+                flowers.push(flower);
+
+                setTimeout(() => {
+                    flower.style.opacity = "0";
+                    flower.style.transform = "scale(1)"; // Shrink smoothly
+                }, i * 40);
+            }
+
+            setTimeout(() => {
+                flowers.forEach(f => f.remove()); // Remove flowers after transition
+            }, 2500);
+        });
+
+        // Drum Animation on Marriage Link Click
+        document.getElementById("marriage-link").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link action
+
+            let drumContainer = document.createElement("div");
+            drumContainer.classList.add("drum-animation");
+
+            let drum = document.createElement("img");
+            drum.src = "https://png.pngtree.com/png-vector/20230301/ourmid/pngtree-shubh-vivah-hindi-calligraphy-with-indian-wedding-musical-instrument-vector-png-image_6623701.png";
+            drum.style.width = "10vw"; // Start small
+            drum.style.height = "auto";
+
+            drumContainer.appendChild(drum);
+            document.body.appendChild(drumContainer);
+
+            // Expand the drum
+            setTimeout(() => {
+                drum.style.animation = "drum-zoom 2s ease-in-out forwards";
+            }, 100);
+
+            // Store final scale and redirect after animation
+            setTimeout(() => {
+                localStorage.setItem("drumFinalScale", "5"); // Store final scale
+                window.location.href = "marriagepg.html?animation=true"; // Redirect with animation trigger
+            }, 2200); // Give enough time for animation to finish
+        });
+    </script>
 </body>
 </html>
